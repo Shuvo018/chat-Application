@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_text_round_corner"
+    android:layout_margin="10dp"
+    android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/group_chat_hashkey_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hash key"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="8dp"
+            android:layout_marginStart="20dp"
+            android:textSize="24sp"/>
+</LinearLayout>

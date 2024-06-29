@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/head1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_corrner"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ChatbackBtnId"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginStart="15dp"
+            android:padding="10dp"
+            android:src="@drawable/leftarrow" />
+
+        <include
+            android:id="@+id/OtherUserProfileId"
+            layout="@layout/profile_pic_view"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/ChatbackBtnId" />
+
+        <TextView
+            android:id="@+id/OtherUserNameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/OtherUserProfileId"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:text="userName"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/head1"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/ImageViewField_layout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/AshGray"
+        android:visibility="gone"
+        android:layout_above="@+id/bottom_layout"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <ImageView
+            android:id="@+id/imageViewFieldId"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/AshGray"
+            android:scaleType="centerCrop"
+            android:padding="10dp"
+            android:src="@drawable/testimage" />
+
+        <ImageView
+            android:id="@+id/closImageViewId"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/AshGray"
+            android:layout_toRightOf="@+id/imageViewFieldId"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:padding="10dp"
+            android:src="@drawable/closeicon" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ChatImageView_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/chat_messageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/chatImageview_btn"
+            android:background="@drawable/edit_text_round_corner"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Write message here"
+            android:padding="10dp"
+            android:textColor="@color/black" />
+
+        <ImageButton
+            android:id="@+id/chatImageview_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toLeftOf="@+id/message_send_btn"
+            android:background="@drawable/edit_text_round_corner"
+            android:padding="5dp"
+            android:src="@drawable/imageicon" />
+        <ImageButton
+            android:id="@+id/message_send_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_round_corner"
+            android:padding="5dp"
+            android:src="@drawable/send2" />
+    </RelativeLayout>
+</RelativeLayout>
